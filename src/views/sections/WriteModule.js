@@ -17,20 +17,39 @@ import {
 } from "reactstrap";
 import SongLine from "../../components/SongLine";
 import {Link} from "react-router-dom";
+const axios = require('axios')
 
 class WriteModule extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       lines: [],
       currentLine: '',
-      genre: 'Rock'
+      genre: 'Rap',
+      predictionLength: 25
     }
-
+    // axios.get('/test').then(res =>{
+    //   this.setState({test: res['data']})
+    // })
   }
 
-  addLine = (line)=>{
+  autoComplete = input =>{
+    const request = {
+      url: '/complete',
+      method: 'get',
+      headers: {
+        input: input,
+        predict_length: this.state.predictionLength
+      }
+    }
+    axios(request).then(res =>{
+      let currentLines = this.state.lines
+      currentLines[currentLines.length - 1] = res['data']['response']
+      this.setState({lines: currentLines})
+    })
+  }
+
+  addLine = (line) =>{
     let line_list = this.state.lines
     line_list.push(line)
 
@@ -53,8 +72,23 @@ class WriteModule extends Component {
   completePressed = (e) =>{
     e.preventDefault()
     this.addLine(this.state.currentLine);
+    this.autoComplete(this.state.currentLine)
     this.setState({currentLine: ""})
   }
+
+  clearLines = (e) =>{
+    e.preventDefault()
+    this.setState({lines: []})
+  }
+
+  getPreviewText = () =>{
+    if(this.state.lines.length == 0){
+      return "Start writing your first line, and let the algorithm complete it!"
+    } else {
+      return "Add additional lines"
+    }
+  }
+
 
 
 
@@ -86,7 +120,7 @@ class WriteModule extends Component {
                                 >
                                   <DropdownItem
                                     href="#pablo"
-                                    onClick={e => e.preventDefault()}
+                                    onClick={this.clearLines}
                                   >
                                     Clear Notepad
                                   </DropdownItem>
@@ -131,7 +165,7 @@ class WriteModule extends Component {
                   ))}
               <Row className="justify-content-center mt-md-3">
                   <Col lg='5'>
-                      <Input placeholder="This is the first line of my new song!" type="text" onChange={this.handleInputChange} value={this.state.currentLine}/>
+                      <Input placeholder={this.getPreviewText()} type="text" onChange={this.handleInputChange} value={this.state.currentLine}/>
                   </Col>
                   <Col lg='1'>
                     <Button

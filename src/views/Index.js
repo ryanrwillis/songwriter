@@ -60,41 +60,42 @@ class Index extends React.Component {
         <main ref="main">
           <MainHeader/>
           <WriteModule/>
-          <section className="section">
-            <Container>
-              <Menus/>
-            </Container>
-          </section>
-          {/*<Hero />*/}
-          <Buttons />
-          <Inputs />
+          <div style={{marginTop: "10%"}}/>
           {/*<section className="section">*/}
-            <Container>
-              <CustomControls />
-              <Menus />
-            </Container>
+          {/*  <Container>*/}
+          {/*    <Menus/>*/}
+          {/*  </Container>*/}
           {/*</section>*/}
-          <Navbars />
-          <section className="section section-components">
-            <Container>
-              <Tabs />
-              <Row className="row-grid justify-content-between align-items-center mt-lg">
-                <Progress />
-                <Pagination />
-              </Row>
-              <Row className="row-grid justify-content-between">
-                <Pills />
-                <Labels />
-              </Row>
-              <Alerts />
-              <Typography />
-              <Modals />
-              <Datepicker />
-              <TooltipPopover />
-            </Container>
-          </section>
-          <Carousel />
-          <Icons />
+          {/*/!*<Hero />*!/*/}
+          {/*<Buttons />*/}
+          {/*<Inputs />*/}
+          {/*/!*<section className="section">*!/*/}
+          {/*  <Container>*/}
+          {/*    <CustomControls />*/}
+          {/*    <Menus />*/}
+          {/*  </Container>*/}
+          {/*/!*</section>*!/*/}
+          {/*<Navbars />*/}
+          {/*<section className="section section-components">*/}
+          {/*  <Container>*/}
+          {/*    <Tabs />*/}
+          {/*    <Row className="row-grid justify-content-between align-items-center mt-lg">*/}
+          {/*      <Progress />*/}
+          {/*      <Pagination />*/}
+          {/*    </Row>*/}
+          {/*    <Row className="row-grid justify-content-between">*/}
+          {/*      <Pills />*/}
+          {/*      <Labels />*/}
+          {/*    </Row>*/}
+          {/*    <Alerts />*/}
+          {/*    <Typography />*/}
+          {/*    <Modals />*/}
+          {/*    <Datepicker />*/}
+          {/*    <TooltipPopover />*/}
+          {/*  </Container>*/}
+          {/*</section>*/}
+          {/*<Carousel />*/}
+          {/*<Icons />*/}
           {/*<Login />*/}
           {/*<Download />*/}
         </main>

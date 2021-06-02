@@ -32,7 +32,7 @@ class MainHeader extends Component {
                     {/*  style={{ width: "200px" }}*/}
                     {/*/>*/}
                     <h1 className="bold text-white">
-                      Let's Write Some Music
+                      Music Writer Bot Yaar
                     </h1>
                     <div className="btn-wrapper mt-5">
                     {/*  <Button*/}
@@ -49,7 +49,7 @@ class MainHeader extends Component {
                       <Button
                         className="btn-icon mb-3 mb-sm-0"
                         color="github"
-                        href="https://github.com/creativetimofficial/argon-design-system-react"
+                        href="https://github.com/ryanrwillis/songwriter"
                         size="lg"
                         target="_blank"
                       >
@@ -57,7 +57,7 @@ class MainHeader extends Component {
                           <i className="fa fa-github" />
                         </span>
                         <span className="btn-inner--text">
-                          <span className="text-warning mr-1">Star us</span>
+                          <span className="text-warning mr-1">View source code</span>
                           on Github
                         </span>
                       </Button>
