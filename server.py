@@ -1,15 +1,16 @@
 import flask
 from flask import jsonify
 from helpers import generateLyrics
+import os
 
 
-app = flask.Flask(__name__)
+app = flask.Flask(__name__, static_folder='./build', static_url_path='/')
 app.config["DEBUG"] = True
 
 
-@app.route('/test', methods=['GET'])
-def home():
-    return "test response"
+@app.route('/')
+def index():
+    return app.send_static_file(filename='index.html')
 
 
 @app.route('/complete', methods=['GET'])
@@ -23,4 +24,9 @@ def complete():
         'response': prediction
     })
 
-app.run()
+# @app.errorhandler(404)
+# def not_found(e):
+#     return app.send_static_file('index.html')
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))
