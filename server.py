@@ -1,8 +1,12 @@
 import flask
 from flask import jsonify
 from helpers import generateLyrics
+from drive_download import download_file_from_google_drive
 import os
 
+print("Downloading model")
+download_file_from_google_drive('1mAvWLSEGOzJIhE_v_7T5AedMODDHlYUp', './models/prod1.h5')
+print("Download complete")
 
 app = flask.Flask(__name__, static_folder='./build', static_url_path='/')
 app.config["DEBUG"] = True
