@@ -1,7 +1,7 @@
 from drive_download import download_file_from_google_drive
-# print("Downloading model")
-# download_file_from_google_drive('1mAvWLSEGOzJIhE_v_7T5AedMODDHlYUp', './models/prod1.h5')
-# print("Download complete")
+print("Downloading model")
+download_file_from_google_drive('1mAvWLSEGOzJIhE_v_7T5AedMODDHlYUp', './models/prod1.h5')
+print("Download complete")
 
 import flask
 from flask import jsonify
