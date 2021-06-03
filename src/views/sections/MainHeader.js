@@ -32,7 +32,7 @@ class MainHeader extends Component {
                     {/*  style={{ width: "200px" }}*/}
                     {/*/>*/}
                     <h1 className="bold text-white">
-                      Music Writer Bot Yaar
+                      Write With <strong>Tech</strong>
                     </h1>
                     <div className="btn-wrapper mt-5">
                     {/*  <Button*/}
