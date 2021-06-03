@@ -11,7 +11,7 @@ import json
 rap_tokenizer = Tokenizer
 rap_longest_sequence = 90
 
-with open('models/prod1_t.json') as f:
+with open('./models/prod1_t.json') as f:
     data = json.load(f)
     rap_tokenizer = tokenizer_from_json(data)
 
@@ -31,7 +31,7 @@ def create_model(dict_length, longest_sequence):
 
 # rap_model = create_model(dict_length=rap_dict_length, longest_sequence=rap_longest_sequence)
 
-rap_model = keras.models.load_model('models/prod1.h5')
+rap_model = keras.models.load_model('./models/prod1.h5')
 
 
 def generateLyrics(seed_, model=rap_model, lyric_tokenizer=rap_tokenizer, new_words=8, longest_sequence=rap_longest_sequence):
